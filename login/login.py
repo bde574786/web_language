@@ -12,8 +12,8 @@ def login():
 
 @app.route('/login/post', methods=['POST'])
 def login_post():
-    print(request.form)
-    return 'Form data received'
+    data = request.json
+    return jsonify(data)
     
 if __name__ == '__main__':
     app.run(debug=True)
