@@ -10,7 +10,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     var formData = new FormData(this)
     
     /*
-    formata 형식으로 서버에 도달하게 되며 백엔드에서는 해당 형식에 맞게 데이터를 처리해야 한다.
+    formdata 형식으로 서버에 도달하게 되며 백엔드에서는 해당 형식에 맞게 데이터를 처리해야 한다.
     */
     fetch('/login/post', {
         method: 'POST',
