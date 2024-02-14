@@ -9,6 +9,16 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     */
     var formData = new FormData(this)
 
-    fetch('http://localhost:5000/')
+    fetch('/login/post', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+            console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.log('Error:', error)
+    })
 
 })
