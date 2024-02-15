@@ -17,7 +17,11 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     })
     .then(response => response.json())
         .then(data => {
-        alert(data.id + "님 환영합니다.")
+            if (Object.keys(data).length === 0) {
+                alert("일치하는 사용자가 없습니다.")
+            } else {
+            alert(data.id + "님 환영합니다.")        
+        }       
     })
     .catch(error => {
         console.error('Error:', error);
